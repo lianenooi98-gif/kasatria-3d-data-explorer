@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kasatria | 3D Data Explorer</title>
+
+  <script
+      src="https://accounts.google.com/gsi/client"
+      onload="console.log('Google Identity Services loaded')"
+      onerror="console.error('Google Identity Services failed to load')"
+    ></script>
+</head>
+<body>
+  <div id="app">
+    <header id="header">
+      <div>
+        <div class="brand">KASATRIA <span>DATA EXPLORER</span></div>
+        <div id="status">Please sign in to load your Google Sheets data</div>
+      </div>
+
+      <button id="login">Sign in with Google</button>
+    </header>
+
+    <nav id="controls">
+      <button class="active" data-layout="table">Table</button>
+      <button data-layout="sphere">Sphere</button>
+      <button data-layout="helix">Double Helix</button>
+      <button data-layout="grid">Grid</button>
+      <button id="reset">Reset View</button>
+    </nav>
+
+    <div id="loading" style="display: none;">
+      Waiting for Google authentication...
+    </div>
+    <div id="error"></div>
+
+    <div id="legend">
+      <b>NET WORTH</b><br />
+      <span class="dot red"></span>Below $100K<br />
+      <span class="dot orange"></span>$100K–$200K<br />
+      <span class="dot green"></span>Above $200K
+    </div>
+
+    <div id="instructions">
+      Drag to rotate<br />
+      Scroll to zoom<br />
+      Right-click to pan
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
